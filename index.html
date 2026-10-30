@@ -74,7 +74,14 @@
     font-weight:600;margin:0 0 12px}
   section{margin-top:22px}
   /* KPI */
-  .kpis{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:14px}
+  .kpis{display:grid;grid-template-columns:1.4fr 1fr;gap:14px}
+  .grid2cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .sleeve-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--hair);border-top:1px solid var(--hair);border-radius:0 0 var(--r) var(--r);overflow:hidden}
+  .sleeve-grid .cell{padding:12px 8px;text-align:center}
+  .sleeve-grid .lab{font-size:10.5px;justify-content:center}
+  .sleeve-grid .val{font-size:18px}
+  .foot-note{font-size:12px;color:var(--muted);margin:10px 2px 0;line-height:1.5}
+  .cur-tag{display:inline-block;font-size:10px;padding:2px 7px;border-radius:5px;background:var(--hair-2);color:var(--ink-2);font-family:var(--sans)}
   .kpi-hero{padding:20px}
   .kpi-hero .lab{font-size:12px;color:var(--muted);letter-spacing:.03em}
   .kpi-hero .big{font-family:var(--mono);font-size:52px;font-weight:600;line-height:1;
@@ -143,22 +150,46 @@
   .chip.on{background:var(--navy);color:#eaf1f4;border-color:var(--navy)}
   .tbl-scroll{overflow-x:auto}
   table{width:100%;border-collapse:collapse;font-size:12.5px;min-width:720px}
-  thead th{position:sticky;top:0;background:var(--surface-2);color:var(--muted);
-    font-weight:600;text-align:right;padding:11px 12px;font-size:11px;letter-spacing:.03em;
-    white-space:nowrap;cursor:pointer;user-select:none;border-bottom:1px solid var(--hair)}
+  thead th{position:sticky;top:0;background:var(--surface);color:var(--muted);
+    font-weight:600;text-align:right;padding:12px 14px 10px;font-size:10.5px;letter-spacing:.06em;
+    text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none;border-bottom:1.5px solid var(--hair)}
   thead th.l{text-align:left}
   thead th:hover{color:var(--ink)}
-  thead th .ar{opacity:.4;font-size:9px}
-  tbody td{padding:10px 12px;text-align:right;border-bottom:1px solid var(--hair-2);
+  thead th .ar{opacity:.35;font-size:9px}
+  tbody td{padding:14px 14px;text-align:right;border-bottom:1px solid var(--hair-2);
     font-family:var(--mono);white-space:nowrap}
+  tbody tr:last-child td{border-bottom:none}
   tbody td.l{text-align:left;font-family:var(--sans)}
   tbody tr:hover{background:var(--surface-2)}
-  .nm-cell{font-weight:500;color:var(--ink)}
-  .nm-sub{font-size:11px;color:var(--muted);font-family:var(--sans)}
-  .tag{display:inline-block;font-size:10.5px;padding:2px 7px;border-radius:5px;
-    background:var(--hair-2);color:var(--ink-2);font-family:var(--sans)}
+  .nm-cell{font-weight:600;color:var(--ink)}
+  .nm-sub{font-size:11px;color:var(--muted);font-family:var(--sans);margin-top:1px}
+  .tag{display:inline-block;font-size:10.5px;padding:3px 9px;border-radius:999px;
+    background:var(--hair-2);color:var(--ink-2);font-family:var(--sans);font-weight:500}
   .wcell{color:var(--ink)}
+  .wbar{height:4px;width:68px;max-width:100%;background:var(--hair-2);border-radius:3px;overflow:hidden;margin:5px 0 0 auto;display:block}
+  .wbar>span{display:block;height:100%;background:var(--ck-teal);border-radius:3px}
   .cur{font-size:10.5px;color:var(--muted)}
+  /* indicators — navy Noosa background */
+  .ind-card{background:#243746;border-color:#243746}
+  .ind-card .card-h h2{color:#f4f8fa}
+  .ind-card .card-h .sub{color:#9fb6c1}
+  .ind-card thead th{background:#243746;color:#9fb6c1;border-bottom-color:rgba(255,255,255,.18)}
+  .ind-card thead th:hover{color:#f4f8fa}
+  .ind-card tbody td{border-bottom-color:rgba(255,255,255,.10);color:#dce7ec}
+  .ind-card tbody tr:last-child td{border-bottom:none}
+  .ind-card tbody tr:hover{background:rgba(255,255,255,.05)}
+  .ind-card .nm-cell{color:#ffffff}
+  .ind-card .pos{color:#5fd389} .ind-card .neg{color:#f58a86}
+  /* benchmarks */
+  .bm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .bm-card{background:var(--surface);border:1px solid var(--hair);border-radius:var(--r);
+    box-shadow:var(--shadow);padding:16px 17px;display:flex;flex-direction:column;gap:2px}
+  .bm-cat{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);font-weight:600}
+  .bm-name{font-size:12.5px;color:var(--ink);font-weight:500;line-height:1.25;min-height:2.3em}
+  .bm-ytd{font-family:var(--mono);font-size:26px;font-weight:600;letter-spacing:-.01em;margin-top:6px}
+  .bm-lab{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-top:2px}
+  .bm-per{font-family:var(--mono);font-size:11.5px;color:var(--ink-2);margin-top:5px;display:flex;gap:10px;flex-wrap:wrap}
+  .bm-per b{font-weight:600}
   /* tooltip */
   .tip{position:fixed;pointer-events:none;background:var(--navy);color:#eaf1f4;
     padding:9px 12px;border-radius:9px;font-size:12px;box-shadow:0 8px 24px rgba(0,0,0,.25);
@@ -170,6 +201,9 @@
   footer b{color:var(--ink-2);font-weight:600}
   @media (max-width:820px){
     .kpis{grid-template-columns:1fr}
+    .grid2cols{grid-template-columns:1fr}
+    .sleeve-grid{grid-template-columns:repeat(3,1fr)}
+    .bm-grid{grid-template-columns:repeat(2,1fr)}
     .grid2{grid-template-columns:1fr}
     .kpi-hero .big{font-size:44px}
   }
@@ -197,6 +231,7 @@
     <p>Seguimiento de la composición, la evolución del patrimonio y la rentabilidad de las distintas estrategias mantenidas en cartera.</p>
   </div>
 
+
   <!-- KPIs -->
   <section>
     <div class="kpis">
@@ -205,12 +240,6 @@
         <div class="big pos" id="k-ytd"></div>
         <div class="note">Retorno ponderado de la cartera medido en CLP. En moneda de cada activo, la rentabilidad YTD es de <b id="k-ytdloc"></b>; la diferencia refleja el efecto del tipo de cambio.</div>
       </div>
-      <div class="strip four">
-        <div class="cell"><div class="lab">3 meses</div><div class="val" id="k-3m"></div></div>
-        <div class="cell"><div class="lab">1 año</div><div class="val" id="k-1y"></div></div>
-        <div class="cell"><div class="lab">3 años <small style="color:var(--muted)">·anual</small></div><div class="val" id="k-3y"></div></div>
-        <div class="cell"><div class="lab">5 años <small style="color:var(--muted)">·anual</small></div><div class="val" id="k-5y"></div></div>
-      </div>
       <div class="strip" style="grid-template-columns:1fr">
         <div class="cell cell-fx"><div class="lab">Tipo de cambio USD/CLP · variación 2026</div><div class="val" id="k-fx"></div><div class="fxsub" id="k-fxsub"></div></div>
         <div class="cell duo"><div><div class="lab">Instrumentos</div><div class="val sm" id="k-n"></div></div><div><div class="lab">Administradoras</div><div class="val sm" id="k-agf"></div></div></div>
@@ -218,15 +247,10 @@
     </div>
   </section>
 
-  <!-- Patrimony -->
+  <!-- Benchmarks -->
   <section>
-    <p class="eyebrow">Evolución del patrimonio</p>
-    <div class="card chart-card">
-      <div class="card-h" style="padding:16px 18px 4px"><h2>Patrimonio indizado · base 100</h2>
-        <p class="sub">Trayectoria reconstruida a partir de la rentabilidad ponderada de la cartera. Base 100 hace cinco años.</p></div>
-      <svg id="patri" viewBox="0 0 900 300" preserveAspectRatio="none"></svg>
-      <div class="chart-foot">Índice construido con los retornos por período de los instrumentos, ponderados por su peso en cartera; refleja rentabilidad, no montos en pesos.</div>
-    </div>
+    <p class="eyebrow">Benchmarks de referencia</p>
+    <div class="bm-grid" id="benchmarks"></div>
   </section>
 
   <!-- Allocation -->
@@ -269,12 +293,37 @@
     </div>
   </section>
 
-  <!-- Top holdings -->
+  <!-- Patrimony -->
   <section>
-    <p class="eyebrow">Principales posiciones</p>
-    <div class="card">
-      <div class="card-h"><h2>Diez mayores instrumentos</h2><p class="sub">Concentración por peso individual en la cartera</p></div>
-      <div class="bars" id="top"></div>
+    <p class="eyebrow">Evolución del patrimonio</p>
+    <div class="card chart-card">
+      <div class="card-h" style="padding:16px 18px 4px"><h2>Patrimonio indizado · base 100</h2>
+        <p class="sub">Trayectoria reconstruida a partir de la rentabilidad ponderada de la cartera. Base 100 hace cinco años.</p></div>
+      <svg id="patri" viewBox="0 0 900 300" preserveAspectRatio="none"></svg>
+      <div class="chart-foot">Índice construido con los retornos por período de los instrumentos, ponderados por su peso en cartera; refleja rentabilidad, no montos en pesos.</div>
+    </div>
+  </section>
+
+  <!-- Period returns by currency sleeve -->
+  <section>
+    <p class="eyebrow">Rentabilidad ponderada por período</p>
+    <div class="grid2cols" id="sleeves"></div>
+    <p class="foot-note">Promedio ponderado de los retornos de cada activo en su moneda (3 y 5 años anualizados). La <b>cartera en pesos</b> agrupa los instrumentos cuyo retorno se reporta en CLP (nacionales y fondos AFP); la <b>cartera en dólares</b>, los que se reportan en USD. El YTD en pesos de la cartera completa es <b id="sl-ytdclp"></b> (incluye el efecto del tipo de cambio).</p>
+  </section>
+
+  <!-- Returns by asset class -->
+  <section>
+    <p class="eyebrow">Rentabilidad por clase de activo</p>
+    <div class="card tbl-card">
+      <div class="card-h" style="padding:16px 18px 10px"><h2>Promedio ponderado por clase</h2>
+        <p class="sub">Cada fila promedia una sola moneda de retorno (columna Moneda), para no mezclar CLP con USD. Algunos fondos de Renta Variable Internacional cotizan en pesos, por eso van en una fila aparte (cuota en CLP). 3 y 5 años anualizados. La última columna es el YTD en pesos.</p></div>
+      <div class="tbl-scroll"><table id="clstbl">
+        <thead><tr>
+          <th class="l">Clase de activo</th><th>Moneda</th><th>Peso</th>
+          <th>YTD</th><th>3M</th><th>1A</th><th>3A</th><th>5A</th><th>YTD CLP</th><th>Benchmark YTD CLP</th>
+        </tr></thead>
+        <tbody id="clsbody"></tbody>
+      </table></div>
     </div>
   </section>
 
@@ -302,6 +351,22 @@
     </div>
   </section>
 
+  <!-- Top holdings -->
+  <section>
+    <p class="eyebrow">Principales posiciones</p>
+    <div class="card">
+      <div class="card-h"><h2>Diez mayores instrumentos</h2><p class="sub">Concentración por peso individual en la cartera</p></div>
+      <div class="bars" id="top"></div>
+    </div>
+  </section>
+
+  <!-- Economic indicators -->
+  <section>
+    <p class="eyebrow">Indicadores económicos y de mercado</p>
+    <div id="indic"></div>
+  </section>
+
+
   <footer>
     <b>Noosa Capital</b> · www.noosa.cl — Documento preparado para uso informativo del cliente. Los retornos de 3 y 5 años se expresan anualizados; los demás son acumulados del período. Rentabilidades pasadas no garantizan resultados futuros. Custodios: Interactive Brokers y UBS.
   </footer>
@@ -310,7 +375,7 @@
 <div class="tip" id="tip"></div>
 
 <script>
-const D = {"asof":"23 de octubre de 2026","port":{"ytd":0.07061,"m3":0.01172,"y1":0.08684,"y3cum":0.49949,"y5cum":0.59556,"ytdclp":0.10315,"y3ann":0.14458,"y5ann":0.09795},"curve":[{"date":"2021-10","label":"5 años","idx":100.0},{"date":"2023-10","label":"3 años","idx":106.4},{"date":"2025-10","label":"1 año","idx":146.8},{"date":"2025-12","label":"Inicio 2026","idx":149.0},{"date":"2026-07","label":"3 meses","idx":157.7},{"date":"2026-10","label":"Hoy","idx":159.6}],"assetgrp":[{"k":"Renta Fija","nac":0.49286,"int":0.10057},{"k":"Renta Variable","nac":0.04878,"int":0.3238},{"k":"Alternativos","nac":0.02063,"int":0.01335},{"k":"Caja","nac":0.002,"int":0}],"regionmatrix":[{"k":"Renta Variable","dev":0.28412,"emg":0.08846},{"k":"Renta Fija","dev":0.08856,"emg":0.50488},{"k":"Alternativos","dev":0.01259,"emg":0.0214}],"geo":[{"k":"Desarrollados","v":0.38527},{"k":"Emergentes","v":0.61474}],"curr":[{"k":"CLP","v":0.54828},{"k":"USD","v":0.45372}],"agf":[{"k":"SURA","v":0.36},{"k":"BlackRock","v":0.292},{"k":"Singular","v":0.189},{"k":"BTG","v":0.065},{"k":"BanChile","v":0.035},{"k":"JP Morgan","v":0.021},{"k":"AFP","v":0.018},{"k":"Itaú","v":0.01},{"k":"Blackstone","v":0.01},{"k":"Caja","v":0.002}],"rows":[{"name":"SURA Renta Bonos Chile","agf":"SURA","asset":"RFn","aclass":"Renta Fija Nacional","grp":"Renta Fija","w":0.196,"ytd":0.047248359999999996,"m3":0.010547800000000001,"y1":0.05652834,"y3":0.09450932999999999,"y5":0.09335776,"curr":"CLP","ytdclp":0.047248359999999996,"dur":null},{"name":"CFIETFCC - Singular Chile Corporativo","agf":"Singular","asset":"RFn","aclass":"Renta Fija Nacional","grp":"Renta Fija","w":0.099,"ytd":0.06285494,"m3":0.01876852,"y1":0.06494406999999999,"y3":0.08351425000000001,"y5":0.09237259999999999,"curr":"CLP","ytdclp":0.06285494,"dur":null},{"name":"Portafolio - BlackRock Moderate (3J 00649)","agf":"BlackRock","asset":"RVi","aclass":"Renta Variable Internacional","grp":"Renta Variable","w":0.09,"ytd":0.0681,"m3":0.0008,"y1":0.0919,"y3":0.1597,"y5":0.0706,"curr":"USD","ytdclp":0.16783148399826842,"dur":null},{"name":"SURA Renta Local UF","agf":"SURA","asset":"RFn","aclass":"Renta Fija Nacional","grp":"Renta Fija","w":0.081,"ytd":0.05364665,"m3":0.01363963,"y1":0.05772532,"y3":0.08529686,"y5":0.0893109,"curr":"CLP","ytdclp":0.05364665,"dur":null},{"name":"IWDA - UCITS iShares MSCI World ","agf":"BlackRock","asset":"RVi","aclass":"Renta Variable Internacional","grp":"Renta Variable","w":0.071,"ytd":0.109145,"m3":0.02799372,"y1":0.1416235,"y3":0.2209669,"y5":0.1086688,"curr":"USD","ytdclp":0.2127089704327867,"dur":null},{"name":"CFIETFGE - Singular Global Equities","agf":"Singular","asset":"RVi","aclass":"Renta Variable Internacional","grp":"Renta Variable","w":0.065,"ytd":0.21100180000000002,"m3":0.06221675,"y1":0.1878707,"y3":0.2312585,"y5":0.1342157,"curr":"USD","ytdclp":0.21100180000000002,"dur":null},{"name":"AFP Capital Fondo C","agf":"SURA","asset":"Mix","aclass":"Multiactivo","grp":"Multiactivo","w":0.05,"ytd":0.02770871,"m3":-0.010352140000000001,"y1":0.0360407,"y3":0.11812139999999999,"y5":0.08569454,"curr":"64/36","ytdclp":0.02770871,"dur":null},{"name":"iShares MSCI ACWI UCITS ETF (Acc)","agf":"BlackRock","asset":"RVi","aclass":"Renta Variable Internacional","grp":"Renta Variable","w":0.045,"ytd":0.1120058,"m3":0.02134807,"y1":0.1444716,"y3":0.22094570000000002,"y5":0.10428950000000001,"curr":"USD","ytdclp":0.21583689132916528,"dur":null},{"name":"CFIBTETF - BTG Pactual ETF RF Chile Mediano Plazo","agf":"BTG","asset":"RFn","aclass":"Renta Fija Nacional","grp":"Renta Fija","w":0.036,"ytd":0.05839342,"m3":0.01525919,"y1":0.06333127,"y3":null,"y5":null,"curr":"CLP","ytdclp":0.05839342,"dur":null},{"name":"SURA Selección Acciones Chile","agf":"SURA","asset":"RVn","aclass":"Renta Variable Nacional","grp":"Renta Variable","w":0.033,"ytd":0.06786613,"m3":0.001687843,"y1":0.2162592,"y3":0.2577601,"y5":0.21384689999999998,"curr":"CLP","ytdclp":0.06786613,"dur":null},{"name":"BGF Fixed Income Global Opportunities Fund","agf":"BlackRock","asset":"RFi","aclass":"Renta Fija Internacional","grp":"Renta Fija","w":0.033,"ytd":-0.005116552,"m3":-0.011299479999999999,"y1":0.0005717684,"y3":0.06074576,"y5":0.022181350000000002,"curr":"USD","ytdclp":0.08777849778405944,"dur":null},{"name":"FI Banchile - Marketplus Global","agf":"BanChile","asset":"RVi","aclass":"Renta Variable Internacional","grp":"Renta Variable","w":0.022,"ytd":0.17748370000000002,"m3":0.05137149,"y1":0.1592606,"y3":0.2272004,"y5":0.13516450000000002,"curr":"USD","ytdclp":0.17748370000000002,"dur":null},{"name":"JP Global High Yield Bond","agf":"JP Morgan","asset":"RFi","aclass":"Renta Fija Internacional","grp":"Renta Fija","w":0.021,"ytd":-0.0019359940000000001,"m3":-0.015600860000000001,"y1":0.011564330000000001,"y3":0.08385216,"y5":0.03290588,"curr":"USD","ytdclp":0.09125603337911858,"dur":null},{"name":"AFP Capital Fondo B","agf":"AFP","asset":"Mix","aclass":"Multiactivo","grp":"Multiactivo","w":0.018,"ytd":0.09217152,"m3":0.006409027,"y1":0.10225759999999999,"y3":0.152497,"y5":0.09691775,"curr":"46/54","ytdclp":0.09217152,"dur":null},{"name":"CFISP500 - S&P 500 Singular","agf":"Singular","asset":"RVi","aclass":"Renta Variable Internacional","grp":"Renta Variable","w":0.014,"ytd":0.2140103,"m3":0.08259570999999999,"y1":0.19780419999999999,"y3":0.24513739999999998,"y5":null,"curr":"USD","ytdclp":0.2140103,"dur":null},{"name":"FI Banchile - Deuda Chilena","agf":"BanChile","asset":"RFn","aclass":"Renta Fija Nacional","grp":"Renta Fija","w":0.013,"ytd":0.047797150000000004,"m3":0.010085690000000001,"y1":0.05667812,"y3":0.08805964,"y5":0.09131296000000001,"curr":"CLP","ytdclp":0.047797150000000004,"dur":null},{"name":"IDSE - iShares MSCI Europe UCITS (Acc)","agf":"BlackRock","asset":"RVi","aclass":"Renta Variable Internacional","grp":"Renta Variable","w":0.013,"ytd":0.056858000000000006,"m3":0.004671006,"y1":0.060281669999999996,"y3":0.1285272,"y5":0.03879966,"curr":"USD","ytdclp":0.1555397870194195,"dur":null},{"name":"CFIETFLP - ETF Singular Chile Largo Plazo","agf":"Singular","asset":"RFn","aclass":"Renta Fija Nacional","grp":"Renta Fija","w":0.011,"ytd":0.04252619,"m3":0.008353746,"y1":0.05667978,"y3":null,"y5":null,"curr":"CLP","ytdclp":0.04252619,"dur":null},{"name":"Itaú ETF It Now S&P IPSA (BCS)","agf":"Itaú","asset":"RVn","aclass":"Renta Variable Nacional","grp":"Renta Variable","w":0.01,"ytd":0.01655276,"m3":-0.022748110000000002,"y1":0.1651512,"y3":0.23921779999999998,"y5":0.20204070000000002,"curr":"CLP","ytdclp":0.01655276,"dur":null},{"name":"FI - Moneda Renta CLP","agf":"BTG","asset":"RFn","aclass":"Renta Fija Nacional","grp":"Renta Fija","w":0.01,"ytd":0.08922606,"m3":0.007906179,"y1":0.1000286,"y3":0.1297062,"y5":0.1401732,"curr":"CLP","ytdclp":0.08922606,"dur":null},{"name":"Blackstone Private Credit Fund (BCRED)","agf":"Blackstone","asset":"AAi","aclass":"Alternativos Internacional","grp":"Alternativos","w":0.01,"ytd":0.002015219,"m3":-0.0004228427,"y1":0.01096401,"y3":0.07040573,"y5":0.07545486,"curr":"USD","ytdclp":0.09557618218670516,"dur":null},{"name":"FI BTG Pactual - Renta Comercial (ex Renta I y II)","agf":"BTG","asset":"AAn","aclass":"Alternativos Nacional","grp":"Alternativos","w":0.01,"ytd":-0.1769145,"m3":-0.1334796,"y1":-0.09754460999999999,"y3":-0.01764589,"y5":0.04240057,"curr":"CLP","ytdclp":-0.1769145,"dur":null},{"name":"IEMA - iShares MSCI Emerging Markets (Acc)","agf":"BlackRock","asset":"RVi","aclass":"Renta Variable Internacional","grp":"Renta Variable","w":0.008,"ytd":0.1383912,"m3":-0.03193382,"y1":0.15781309999999998,"y3":0.2236096,"y5":0.066685,"curr":"USD","ytdclp":0.2446859699153352,"dur":null},{"name":"AAXJ - iShares MSCI All Country Asia","agf":"BlackRock","asset":"RVi","aclass":"Renta Variable Internacional","grp":"Renta Variable","w":0.008,"ytd":0.1480833,"m3":-0.05086859,"y1":0.1540064,"y3":0.22269529999999998,"y5":0.05952779,"curr":"USD","ytdclp":0.2552830483968065,"dur":null},{"name":"IVW - iShares SyP 500 Growth","agf":"BlackRock","asset":"RVi","aclass":"Renta Variable Internacional","grp":"Renta Variable","w":0.008,"ytd":0.11675079999999999,"m3":0.02858119,"y1":0.1346056,"y3":0.2712632,"y5":0.1262735,"curr":"USD","ytdclp":0.22102494524880933,"dur":null},{"name":"CJPU - iShares MSCI Japan UCITS (Acc)","agf":"BlackRock","asset":"RVi","aclass":"Renta Variable Internacional","grp":"Renta Variable","w":0.008,"ytd":0.17539090000000002,"m3":0.03648754,"y1":0.2016789,"y3":0.2129163,"y5":0.09347484,"curr":"USD","ytdclp":0.28514043537595746,"dur":null},{"name":"VVI - iShares Core SyP 500","agf":"BlackRock","asset":"RVi","aclass":"Renta Variable Internacional","grp":"Renta Variable","w":0.008,"ytd":0.1276171,"m3":0.03594615,"y1":0.1483356,"y3":0.23507470000000003,"y5":0.1253019,"curr":"USD","ytdclp":0.23290586206799335,"dur":null},{"name":"FI BTG Pactual - Renta Residencial","agf":"BTG","asset":"AAn","aclass":"Alternativos Nacional","grp":"Alternativos","w":0.007,"ytd":-0.3977753,"m3":-0.1595126,"y1":-0.3924743,"y3":-0.12001849999999999,"y5":-0.03663203,"curr":"CLP","ytdclp":-0.3977753,"dur":null},{"name":"FI BTG Pactual - Créditos y Facturas - A","agf":"BTG","asset":"AAn","aclass":"Alternativos Nacional","grp":"Alternativos","w":0.001,"ytd":0.0008892482999999999,"m3":0.0,"y1":0.38558030000000004,"y3":-0.05723928,"y5":-0.018709450000000002,"curr":"CLP","ytdclp":0.0008892482999999999,"dur":null},{"name":"FI BTG Pactual - Garantias Inmobiliarias - A","agf":"BTG","asset":"AAn","aclass":"Alternativos Nacional","grp":"Alternativos","w":0.001,"ytd":null,"m3":null,"y1":null,"y3":null,"y5":null,"curr":"CLP","ytdclp":null,"dur":null},{"name":"FI BTG Pactual - Deuda Privada - A","agf":"BTG","asset":"AAn","aclass":"Alternativos Nacional","grp":"Alternativos","w":0,"ytd":9.037642e-05,"m3":0.0,"y1":9.037642e-05,"y3":0.0983821,"y5":0.08777125,"curr":"CLP","ytdclp":9.037642e-05,"dur":null},{"name":"Caja + Money Market","agf":"Caja","asset":"Caja","aclass":"Caja & Money Market","grp":"Caja","w":0.002,"ytd":null,"m3":null,"y1":null,"y3":null,"y5":null,"curr":"USD","ytdclp":null,"dur":null}],"fx":{"start":900.58,"now":993.33,"var":0.10299}};
+const D = {"asof":"30 de octubre de 2026","port":{"ytd":0.0699,"m3":0.01251,"y1":0.07924,"y3cum":0.51044,"y5cum":0.57733,"ytdclp":0.10178,"y3ann":0.14736,"y5ann":0.09543},"curve":[{"date":"2021-10","label":"5 años","idx":100.0},{"date":"2023-10","label":"3 años","idx":104.4},{"date":"2025-10","label":"1 año","idx":146.2},{"date":"2025-12","label":"Inicio 2026","idx":147.4},{"date":"2026-07","label":"3 meses","idx":155.8},{"date":"2026-10","label":"Hoy","idx":157.7}],"assetgrp":[{"k":"Renta Fija","nac":0.49286,"int":0.10057},{"k":"Renta Variable","nac":0.04878,"int":0.3238},{"k":"Alternativos","nac":0.02063,"int":0.01335},{"k":"Caja","nac":0.002,"int":0}],"regionmatrix":[{"k":"Renta Variable","dev":0.28412,"emg":0.08846},{"k":"Renta Fija","dev":0.08856,"emg":0.50488},{"k":"Alternativos","dev":0.01259,"emg":0.0214}],"geo":[{"k":"Desarrollados","v":0.38527},{"k":"Emergentes","v":0.61474}],"curr":[{"k":"CLP","v":0.54828},{"k":"USD","v":0.45372}],"agf":[{"k":"SURA","v":0.36},{"k":"BlackRock","v":0.292},{"k":"Singular","v":0.189},{"k":"BTG","v":0.065},{"k":"BanChile","v":0.035},{"k":"JP Morgan","v":0.021},{"k":"AFP","v":0.018},{"k":"Itaú","v":0.01},{"k":"Blackstone","v":0.01},{"k":"Caja","v":0.002}],"rows":[{"name":"SURA Renta Bonos Chile","agf":"SURA","asset":"RFn","aclass":"Renta Fija Nacional","grp":"Renta Fija","w":0.196,"ytd":0.051971930000000006,"m3":0.01657929,"y1":0.06153405,"y3":0.09714051,"y5":0.08992955,"curr":"CLP","rcur":"CLP","ytdclp":0.051971930000000006,"dur":null},{"name":"CFIETFCC - Singular Chile Corporativo","agf":"Singular","asset":"RFn","aclass":"Renta Fija Nacional","grp":"Renta Fija","w":0.099,"ytd":0.06738945,"m3":0.02412655,"y1":0.06970504,"y3":0.08590450000000001,"y5":0.08955317000000002,"curr":"CLP","rcur":"CLP","ytdclp":0.06738945,"dur":null},{"name":"Portafolio - BlackRock Moderate (3J 00649)","agf":"BlackRock","asset":"RVi","aclass":"Renta Variable Internacional","grp":"Renta Variable","w":0.09,"ytd":0.0644,"m3":0.0089,"y1":0.0743,"y3":0.1466,"y5":0.0686,"curr":"USD","rcur":"USD","ytdclp":0.16202439083427445,"dur":null},{"name":"SURA Renta Local UF","agf":"SURA","asset":"RFn","aclass":"Renta Fija Nacional","grp":"Renta Fija","w":0.081,"ytd":0.057472539999999996,"m3":0.01837616,"y1":0.06182473,"y3":0.08712127,"y5":0.08684306,"curr":"CLP","rcur":"CLP","ytdclp":0.057472539999999996,"dur":null},{"name":"IWDA - UCITS iShares MSCI World ","agf":"BlackRock","asset":"RVi","aclass":"Renta Variable Internacional","grp":"Renta Variable","w":0.071,"ytd":0.1043398,"m3":0.01301337,"y1":0.1225771,"y3":0.2245568,"y5":0.1058046,"curr":"USD","rcur":"USD","ytdclp":0.20562738009117298,"dur":null},{"name":"CFIETFGE - Singular Global Equities","agf":"Singular","asset":"RVi","aclass":"Renta Variable Internacional","grp":"Renta Variable","w":0.065,"ytd":0.20390160000000002,"m3":0.06343146,"y1":0.16706420000000002,"y3":0.2510674,"y5":0.1323351,"curr":"USD","rcur":"CLP","ytdclp":0.20390160000000002,"dur":null},{"name":"AFP Capital Fondo C","agf":"SURA","asset":"Mix","aclass":"Multiactivo","grp":"Multiactivo","w":0.05,"ytd":0.02596575,"m3":-0.0020940159999999998,"y1":0.0311477,"y3":0.11982419999999999,"y5":0.08384916,"curr":"64/36","rcur":"CLP","ytdclp":0.02596575,"dur":null},{"name":"iShares MSCI ACWI UCITS ETF (Acc)","agf":"BlackRock","asset":"RVi","aclass":"Renta Variable Internacional","grp":"Renta Variable","w":0.045,"ytd":0.10587479999999999,"m3":0.006244796,"y1":0.12460449999999999,"y3":0.2241398,"y5":0.1018825,"curr":"USD","rcur":"USD","ytdclp":0.2073031668629981,"dur":null},{"name":"CFIBTETF - BTG Pactual ETF RF Chile Mediano Plazo","agf":"BTG","asset":"RFn","aclass":"Renta Fija Nacional","grp":"Renta Fija","w":0.036,"ytd":0.06402534,"m3":0.021726779999999998,"y1":0.0683532,"y3":null,"y5":null,"curr":"CLP","rcur":"CLP","ytdclp":0.06402534,"dur":null},{"name":"SURA Selección Acciones Chile","agf":"SURA","asset":"RVn","aclass":"Renta Variable Nacional","grp":"Renta Variable","w":0.033,"ytd":0.041557500000000004,"m3":-0.03282033,"y1":0.152564,"y3":0.2554817,"y5":0.2078127,"curr":"CLP","rcur":"CLP","ytdclp":0.041557500000000004,"dur":null},{"name":"BGF Fixed Income Global Opportunities Fund","agf":"BlackRock","asset":"RFi","aclass":"Renta Fija Internacional","grp":"Renta Fija","w":0.033,"ytd":-0.002842481,"m3":-0.009598994,"y1":0.003432573,"y3":0.05944691,"y5":0.02264771,"curr":"USD","rcur":"USD","ytdclp":0.08861457965219044,"dur":null},{"name":"FI Banchile - Marketplus Global","agf":"BanChile","asset":"RVi","aclass":"Renta Variable Internacional","grp":"Renta Variable","w":0.022,"ytd":0.1991665,"m3":0.08369084,"y1":0.1629392,"y3":0.2581016,"y5":0.1410234,"curr":"USD","rcur":"CLP","ytdclp":0.1991665,"dur":null},{"name":"JP Global High Yield Bond","agf":"JP Morgan","asset":"RFi","aclass":"Renta Fija Internacional","grp":"Renta Fija","w":0.021,"ytd":0.006178688,"m3":-0.008040592,"y1":0.01868306,"y3":0.08547502,"y5":0.03486936,"curr":"USD","rcur":"USD","ytdclp":0.09846315012554463,"dur":null},{"name":"AFP Capital Fondo B","agf":"AFP","asset":"Mix","aclass":"Multiactivo","grp":"Multiactivo","w":0.018,"ytd":0.08600187999999999,"m3":0.01703681,"y1":0.08881505,"y3":0.1548015,"y5":0.09604199,"curr":"46/54","rcur":"CLP","ytdclp":0.08600187999999999,"dur":null},{"name":"CFISP500 - S&P 500 Singular","agf":"Singular","asset":"RVi","aclass":"Renta Variable Internacional","grp":"Renta Variable","w":0.014,"ytd":0.2069293,"m3":0.0803622,"y1":0.1670131,"y3":0.26259309999999997,"y5":null,"curr":"USD","rcur":"CLP","ytdclp":0.2069293,"dur":null},{"name":"FI Banchile - Deuda Chilena","agf":"BanChile","asset":"RFn","aclass":"Renta Fija Nacional","grp":"Renta Fija","w":0.013,"ytd":0.05256191,"m3":0.016479459999999998,"y1":0.06152682,"y3":0.09054726,"y5":0.08806554999999999,"curr":"CLP","rcur":"CLP","ytdclp":0.05256191,"dur":null},{"name":"IDSE - iShares MSCI Europe UCITS (Acc)","agf":"BlackRock","asset":"RVi","aclass":"Renta Variable Internacional","grp":"Renta Variable","w":0.013,"ytd":0.07426636,"m3":-0.004812105,"y1":0.1014826,"y3":0.1334458,"y5":0.04019951,"curr":"USD","rcur":"USD","ytdclp":0.17279567133855078,"dur":null},{"name":"CFIETFLP - ETF Singular Chile Largo Plazo","agf":"Singular","asset":"RFn","aclass":"Renta Fija Nacional","grp":"Renta Fija","w":0.011,"ytd":0.04828402,"m3":0.015379370000000002,"y1":0.062050669999999995,"y3":null,"y5":null,"curr":"CLP","rcur":"CLP","ytdclp":0.04828402,"dur":null},{"name":"Itaú ETF It Now S&P IPSA (BCS)","agf":"Itaú","asset":"RVn","aclass":"Renta Variable Nacional","grp":"Renta Variable","w":0.01,"ytd":-0.01764823,"m3":-0.05657793,"y1":0.09450445,"y3":0.2352796,"y5":0.19014959999999997,"curr":"CLP","rcur":"CLP","ytdclp":-0.01764823,"dur":null},{"name":"FI - Moneda Renta CLP","agf":"BTG","asset":"RFn","aclass":"Renta Fija Nacional","grp":"Renta Fija","w":0.01,"ytd":0.09260673000000001,"m3":0.01200427,"y1":0.10767739999999999,"y3":0.13293049999999998,"y5":0.13477740000000002,"curr":"CLP","rcur":"CLP","ytdclp":0.09260673000000001,"dur":null},{"name":"Blackstone Private Credit Fund (BCRED)","agf":"Blackstone","asset":"AAi","aclass":"Alternativos Internacional","grp":"Alternativos","w":0.01,"ytd":0.004150772,"m3":0.002131325,"y1":0.01433731,"y3":0.07041105,"y5":0.07515736,"curr":"USD","rcur":"USD","ytdclp":0.09624923819904785,"dur":null},{"name":"FI BTG Pactual - Renta Comercial (ex Renta I y II)","agf":"BTG","asset":"AAn","aclass":"Alternativos Nacional","grp":"Alternativos","w":0.01,"ytd":-0.20775780000000002,"m3":-0.1437675,"y1":-0.1494683,"y3":-0.02139151,"y5":0.0371894,"curr":"CLP","rcur":"CLP","ytdclp":-0.20775780000000002,"dur":null},{"name":"IEMA - iShares MSCI Emerging Markets (Acc)","agf":"BlackRock","asset":"RVi","aclass":"Renta Variable Internacional","grp":"Renta Variable","w":0.008,"ytd":0.12123519999999999,"m3":-0.04466461,"y1":0.1307189,"y3":0.2215428,"y5":0.06758068,"curr":"USD","rcur":"USD","ytdclp":0.22407238844602229,"dur":null},{"name":"AAXJ - iShares MSCI All Country Asia","agf":"BlackRock","asset":"RVi","aclass":"Renta Variable Internacional","grp":"Renta Variable","w":0.008,"ytd":0.1456048,"m3":-0.03983023,"y1":0.139729,"y3":0.22422419999999998,"y5":0.06337427,"curr":"USD","rcur":"USD","ytdclp":0.2506771137324513,"dur":null},{"name":"IVW - iShares SyP 500 Growth","agf":"BlackRock","asset":"RVi","aclass":"Renta Variable Internacional","grp":"Renta Variable","w":0.008,"ytd":0.09828481,"m3":-0.0008426462,"y1":0.08597874,"y3":0.2707133,"y5":0.1156302,"curr":"USD","rcur":"USD","ytdclp":0.19901703993121656,"dur":null},{"name":"CJPU - iShares MSCI Japan UCITS (Acc)","agf":"BlackRock","asset":"RVi","aclass":"Renta Variable Internacional","grp":"Renta Variable","w":0.008,"ytd":0.158043,"m3":0.007987944,"y1":0.16359300000000002,"y3":0.2021914,"y5":0.09061678000000001,"curr":"USD","rcur":"USD","ytdclp":0.2642561176577374,"dur":null},{"name":"VVI - iShares Core SyP 500","agf":"BlackRock","asset":"RVi","aclass":"Renta Variable Internacional","grp":"Renta Variable","w":0.008,"ytd":0.1205073,"m3":0.0174783,"y1":0.1240095,"y3":0.235094,"y5":0.12088900000000001,"curr":"USD","rcur":"USD","ytdclp":0.22327772708366944,"dur":null},{"name":"FI BTG Pactual - Renta Residencial","agf":"BTG","asset":"AAn","aclass":"Alternativos Nacional","grp":"Alternativos","w":0.007,"ytd":-0.3973912,"m3":-0.1598888,"y1":-0.3931024,"y3":-0.12067729999999999,"y5":-0.03280564,"curr":"CLP","rcur":"CLP","ytdclp":-0.3973912,"dur":null},{"name":"FI BTG Pactual - Créditos y Facturas - A","agf":"BTG","asset":"AAn","aclass":"Alternativos Nacional","grp":"Alternativos","w":0.001,"ytd":0.0008892482999999999,"m3":0.0,"y1":0.38558030000000004,"y3":-0.06012957,"y5":-0.018709450000000002,"curr":"CLP","rcur":"CLP","ytdclp":0.0008892482999999999,"dur":null},{"name":"FI BTG Pactual - Garantias Inmobiliarias - A","agf":"BTG","asset":"AAn","aclass":"Alternativos Nacional","grp":"Alternativos","w":0.001,"ytd":null,"m3":null,"y1":null,"y3":null,"y5":null,"curr":"CLP","rcur":"CLP","ytdclp":null,"dur":null},{"name":"FI BTG Pactual - Deuda Privada - A","agf":"BTG","asset":"AAn","aclass":"Alternativos Nacional","grp":"Alternativos","w":0,"ytd":9.037642e-05,"m3":0.0,"y1":9.037642e-05,"y3":-0.002548612,"y5":0.08777125,"curr":"CLP","rcur":"CLP","ytdclp":9.037642e-05,"dur":null},{"name":"Caja + Money Market","agf":"Caja","asset":"Caja","aclass":"Caja & Money Market","grp":"Caja","w":0.002,"ytd":null,"m3":null,"y1":null,"y3":null,"y5":null,"curr":"USD","rcur":"CLP","ytdclp":null,"dur":null}],"sleeves":[{"k":"Cartera en pesos (CLP)","cur":"CLP","w":0.677,"ytd":0.06756,"m3":0.01701,"y1":0.07551,"y3":0.13406,"y5":0.10415,"ytdclp":0.06756},{"k":"Cartera en dólares (USD)","cur":"USD","w":0.323,"ytd":0.0748,"m3":0.0031,"y1":0.08705,"y3":0.17242,"y5":0.07801,"ytdclp":0.17338}],"classret":[{"k":"Renta Fija Nacional","cur":"CLP","w":0.446,"ytd":0.0582,"m3":0.01886,"y1":0.065,"y3":0.09306,"y5":0.09037,"ytdclp":0.0582,"bm":{"n":"Riskamerica","clp":0.0694}},{"k":"Renta Fija Internacional","cur":"USD","w":0.054,"ytd":0.00067,"m3":-0.00899,"y1":0.00936,"y3":0.06972,"y5":0.02747,"ytdclp":0.09244,"bm":{"n":"US Universal","clp":0.09327}},{"k":"Renta Variable Nacional","cur":"CLP","w":0.043,"ytd":0.02779,"m3":-0.03835,"y1":0.13906,"y3":0.25084,"y5":0.2038,"ytdclp":0.02779,"bm":{"n":"IPSA","clp":-0.01765}},{"k":"Renta Variable Internacional","cur":"USD","w":0.259,"ytd":0.09299,"m3":0.00565,"y1":0.10606,"y3":0.19517,"y5":0.08754,"ytdclp":0.19323,"bm":{"n":"ACWI","clp":0.24698}},{"k":"Renta Variable Internacional · cuota en CLP","cur":"CLP","w":0.101,"ytd":0.20329,"m3":0.07019,"y1":0.16616,"y3":0.25421,"y5":0.13456,"ytdclp":0.20329,"bm":{"n":"ACWI","clp":0.24698}},{"k":"Multiactivo","cur":"CLP","w":0.068,"ytd":0.04186,"m3":0.00297,"y1":0.04641,"y3":0.12929,"y5":0.08713,"ytdclp":0.04186},{"k":"Alternativos Nacional","cur":"CLP","w":0.019,"ytd":-0.26991,"m3":-0.14205,"y1":-0.21449,"y3":-0.05977,"y5":0.00914,"ytdclp":-0.26991},{"k":"Alternativos Internacional","cur":"USD","w":0.01,"ytd":0.00415,"m3":0.00213,"y1":0.01434,"y3":0.07041,"y5":0.07516,"ytdclp":0.09625}],"indicators":[{"group":"Tipo de cambio y tasas","cols":["YTD","1A","3A","5A"],"rows":[{"t":"USDCLP","n":"Peso Chileno","px":"991,52","u":"","v":[-0.091718,-0.04956000000000001,-0.08473900000000001,-0.178534]},{"t":"USDCHF","n":"Dólar / Franco Suizo","px":"0,82","u":"CHF","v":[-0.036704,-0.02528,0.096257,0.113393]},{"t":"FDTR","n":"Tasa Fed (EE.UU.)","px":"4,00","u":"","v":[0.0667,0.0,-0.2727,15.0]},{"t":"CHOVCHOV","n":"Tasa de Política (Chile)","px":"4,50","u":"","v":[0.0,-0.0526,-0.5,0.6364]},{"t":"CNPINSYO","n":"Inflación Chile (YoY)","px":"4,08","u":"","v":[0.1826,-0.0727,-0.2016,-0.23600000000000002]},{"t":"CPIYOY","n":"Inflación EE.UU. (YoY)","px":"3,70","u":"","v":[0.37,0.233,0.0,-0.315]}]},{"group":"Índices accionarios","cols":["YTD","1A","3A","5A"],"rows":[{"t":"NDX","n":"NASDAQ 100","px":"28.469,04","u":"","v":[0.1330617,0.1078507,0.2639598,0.1328114]},{"t":"SPX","n":"S&P 500","px":"7.601,42","u":"","v":[0.12051339999999999,0.1239247,0.23489000000000002,0.1208948]},{"t":"RTY","n":"Russell 2000","px":"2.810,32","u":"","v":[0.1446565,0.1489002,0.2077757,0.0556076]},{"t":"INDU","n":"Dow Jones Industrial","px":"51.960,24","u":"","v":[0.09476974,0.1100771,0.1833262,0.09764575]},{"t":"VIX","n":"CBOE SPX Volatility Index","px":"19,85","u":"","v":[0.3277592,0.13818809999999998,0.030483600000000003,0.0406604]}]}],"benchmarks":[{"cat":"Índices accionarios Internacional","t":"MXWD Index","n":"MSCI ACWI Index","px":"1.132,62","u":"USD","v":[0.1326062,0.1449914,0.2347356,0.1095367]},{"cat":"Indice de Bonos Internacional","t":"LC07TRUU Index","n":"BBG Barclays US Universal","px":"636,15","u":"USD","v":[-0.007001421,-0.001704522,0.057423919999999996,0.001500166]},{"cat":"Índices accionarios Local","t":"CFMITNIPSA","n":"IT NOW S&P IPSA ETF","px":"4.758,90","u":"CLP","v":[-0.01764823,0.09450445,0.2352796,0.19014959999999997]},{"cat":"Indice de Bonos  Local","t":"RACLLITE Index","n":"Riskamerica Corporativo Invertible Lite","px":"3.358,74","u":"CLP","v":[0.06939999999999999,0.07200000000000001,0.0889,0.0888]}],"fx":{"start":900.58,"now":991.52,"var":0.10098}};
 const $ = s=>document.querySelector(s);
 const pct = (v,dec=1)=> (v==null||isNaN(v)) ? "—" : (v*100).toFixed(dec)+"%";
 const spct = (v,dec=1)=> (v==null||isNaN(v)) ? "—" : (v>=0?"+":"")+(v*100).toFixed(dec)+"%";
@@ -320,8 +385,64 @@ $("#asof").textContent = D.asof;
 // KPIs
 $("#k-ytd").textContent = spct(D.port.ytdclp,1);
 $("#k-ytdloc").textContent = pct(D.port.ytd,1);
-function setK(id,v){const e=$(id);e.textContent=spct(v,1);e.className="val "+clsPN(v);}
-setK("#k-3m",D.port.m3); setK("#k-1y",D.port.y1); setK("#k-3y",D.port.y3ann); setK("#k-5y",D.port.y5ann);
+// period returns by currency sleeve
+(function(){
+  const host=$("#sleeves"); if(!host||!D.sleeves)return;
+  host.innerHTML=D.sleeves.map(s=>{
+    const cells=[["YTD",s.ytd],["3M",s.m3],["1A",s.y1],["3A·a",s.y3],["5A·a",s.y5]]
+      .map(([lab,v])=>`<div class="cell"><div class="lab">${lab}</div><div class="val ${clsPN(v)}">${spct(v,1)}</div></div>`).join("");
+    return `<div class="card"><div class="card-h" style="padding:15px 18px 10px"><h2>${s.k}</h2><p class="sub" style="margin:3px 0 0">Peso ${pct(s.w,1)} · retornos en ${s.cur}</p></div><div class="sleeve-grid">${cells}</div></div>`;
+  }).join("");
+  if($("#sl-ytdclp")) $("#sl-ytdclp").textContent=spct(D.port.ytdclp,1);
+})();
+// returns by asset class
+(function(){
+  const b=$("#clsbody"); if(!b||!D.classret)return;
+  const mcw=Math.max(...D.classret.map(c=>c.w||0));
+  b.innerHTML=D.classret.map(c=>`<tr>
+    <td class="l nm-cell">${c.k}</td>
+    <td><span class="cur-tag">${c.cur}</span></td>
+    <td class="wcell">${pct(c.w,1)}<span class="wbar"><span style="width:${((c.w||0)/mcw*100).toFixed(0)}%"></span></span></td>
+    <td class="${clsPN(c.ytd)}">${spct(c.ytd,1)}</td>
+    <td class="${clsPN(c.m3)}">${spct(c.m3,1)}</td>
+    <td class="${clsPN(c.y1)}">${spct(c.y1,1)}</td>
+    <td class="${clsPN(c.y3)}">${spct(c.y3,1)}</td>
+    <td class="${clsPN(c.y5)}">${spct(c.y5,1)}</td>
+    <td class="${clsPN(c.ytdclp)}" style="font-weight:600">${spct(c.ytdclp,1)}</td>
+    <td>${c.bm?`<span class="${clsPN(c.bm.clp)}" style="font-weight:500">${spct(c.bm.clp,1)}</span><div class="nm-sub" style="text-align:right">${c.bm.n}</div>`:'<span style="color:var(--muted)">—</span>'}</td>
+  </tr>`).join("");
+})();
+// benchmarks
+(function(){
+  const host=$("#benchmarks"); if(!host||!D.benchmarks)return;
+  const short=s=>s.replace("Índices accionarios","Renta Variable").replace("Indice de Bonos","Renta Fija").replace(/\s+/g," ").trim();
+  host.innerHTML=D.benchmarks.map(b=>{
+    const v=b.v||[];
+    return `<div class="bm-card">
+      <div class="bm-cat">${short(b.cat)} · ${b.u||""}</div>
+      <div class="bm-name">${b.n}</div>
+      <div class="bm-ytd ${clsPN(v[0])}">${spct(v[0],1)}</div>
+      <div class="bm-lab">YTD</div>
+      <div class="bm-per"><span>1A <b class="${clsPN(v[1])}">${spct(v[1],1)}</b></span><span>3A <b class="${clsPN(v[2])}">${spct(v[2],1)}</b></span><span>5A <b class="${clsPN(v[3])}">${spct(v[3],1)}</b></span></div>
+    </div>`;
+  }).join("");
+})();
+// economic indicators
+(function(){
+  const host=$("#indic"); if(!host||!D.indicators)return;
+  host.innerHTML=D.indicators.map(g=>{
+    const head=`<tr><th class="l">Ticker</th><th class="l">Nombre</th><th>Precio</th><th>Unidad</th>`+
+      g.cols.map(c=>`<th>${c}</th>`).join("")+`</tr>`;
+    const body=(g.rows||[]).map(r=>`<tr>
+      <td class="l nm-cell">${r.t}</td><td class="l">${r.n}</td>
+      <td class="wcell">${r.px}</td><td>${r.u||"—"}</td>`+
+      r.v.map(x=>`<td class="${clsPN(x)}">${spct(x,2)}</td>`).join("")+`</tr>`).join("");
+    const empty=(!g.rows||!g.rows.length)?`<tr><td class="l" colspan="${4+g.cols.length}" style="color:var(--muted)">${g.note||"Sin datos aún"}</td></tr>`:"";
+    return `<div class="card tbl-card ind-card" style="margin-bottom:14px">
+      <div class="card-h" style="padding:16px 18px 8px"><h2>${g.group}</h2>${g.note?`<p class="sub" style="margin:3px 0 0">${g.note}</p>`:""}</div>
+      <div class="tbl-scroll"><table><thead>${head}</thead><tbody>${body}${empty}</tbody></table></div></div>`;
+  }).join("");
+})();
 $("#k-n").textContent = D.rows.filter(r=>r.name!=="Caja + Money Market").length + 1;
 $("#k-agf").textContent = new Set(D.rows.map(r=>r.agf)).size;
 if(D.fx){
@@ -462,6 +583,7 @@ document.querySelectorAll("thead th").forEach(th=>th.addEventListener("click",()
   const k=th.dataset.k; if(k===sortK)sortDir*=-1; else {sortK=k;sortDir=(k==="name"||k==="grp")?1:-1;}
   render();
 }));
+const MW=Math.max(...D.rows.map(r=>r.w||0));
 function render(){
   let rows=D.rows.filter(r=>filt==="Todas"||r.grp===filt);
   rows.sort((a,b)=>{let x=a[sortK],y=b[sortK];
@@ -471,7 +593,7 @@ function render(){
     <tr>
       <td class="l"><div class="nm-cell">${r.name}</div><div class="nm-sub">${r.agf}</div></td>
       <td class="l"><span class="tag">${r.grp}</span></td>
-      <td class="wcell">${pct(r.w,1)}</td>
+      <td class="wcell">${pct(r.w,1)}<span class="wbar"><span style="width:${((r.w||0)/MW*100).toFixed(0)}%"></span></span></td>
       <td class="${clsPN(r.ytd)}">${spct(r.ytd,1)}</td>
       <td class="${clsPN(r.m3)}">${spct(r.m3,1)}</td>
       <td class="${clsPN(r.y1)}">${spct(r.y1,1)}</td>
